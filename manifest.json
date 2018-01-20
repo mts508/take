@@ -1,0 +1,14 @@
+{
+	"name" : "Take Lucont",
+	"short_name" : "Take",
+	"display" : "standalone",
+	"background_color" : "darkslateblue",
+	"description" : "Busca servicios de manera más fácil",
+	"icons" : [
+		{
+			"src" : "files/take.png",
+			"sizes" : "200x200",
+			"type" : "image/png"
+		}
+	]
+}

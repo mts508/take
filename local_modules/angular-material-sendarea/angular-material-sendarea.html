@@ -1,0 +1,16 @@
+<md-card>
+  <md-card-content style="padding-top: 8px; padding-bottom: 4px; padding-left: 2px; padding-right: 2px;">
+    <div layout="row" layout-align="start end">
+      <div layout="column" layout-align="start end" flex>
+        <div contenteditable="true" spellcheck=false style="padding-top:16px;padding-left:16px;padding-bottom:8px; max-height: 200px; overflow-y: auto; width: 100%;" class="textarea" flex>
+        </div>
+        <span style="font-size: 13px; margin-top: 10px;" ng-if="maxlength && currentWrittingLength<=maxlength">{{currentWrittingLength}}/{{maxlength}}</span>
+        <span style="font-size: 13px; margin-top: 10px; color: red;" ng-if="maxlength && currentWrittingLength>maxlength">{{currentWrittingLength}}/{{maxlength}}</span>
+      </div>
+      <div layout="column">
+        <md-button class="md-icon-button" aria-label="enviar" title="Enviar" ng-disabled="(maxlength && currentWrittingLength>maxlength) || !sendEnabled"><ng-md-icon icon="send"/></md-button>
+        <span ng-if="maxlength" style="font-size: 13px; margin-top: 4px; color: rgba(0,0,0,0)">-</span>
+      </div>
+    </div>
+  </md-card-content>
+</md-card>

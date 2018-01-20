@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="TakeApp">
+	<head>
+		<meta charset="utf-8" />
+    <title>Take</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="files/take.png">
+		<link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css" />
+    <link rel="stylesheet" href="node_modules/angular-material-icons/angular-material-icons.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--link rel="stylesheet" href="styles.css" /-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+    <script src="node_modules/angular/angular.js"></script>
+		<script src="node_modules/angular-aria/angular-aria.js"></script>
+		<script src="node_modules/angular-route/angular-route.min.js"></script>
+		<script src="node_modules/angular-animate/angular-animate.js"></script>
+		<script src="node_modules/angular-messages/angular-messages.js"></script>
+		<script src="node_modules/angular-material-icons/angular-material-icons.js"></script>
+		<script src="node_modules/angular-material/angular-material.js"></script>
+		<script src="local_modules/angular-material-sendarea/angular-material-sendarea.js"></script>
+
+
+
+		<script src="modulos/sistema/module.js"></script>
+		<script src="modulos/sistema/take.js"></script>
+
+		<script src="modulos/buscar/buscar.js"></script>
+		<script src="modulos/buscar/avisos.js"></script>
+
+		<script src="modulos/contacto/contacto.js"></script>
+		<script src="modulos/contacto/mensajes.js"></script>
+
+	</head>
+
+	<body ng-controller="Take" md-theme="take" layout="column">
+		<div ng-if="public.show_main_toolbar">
+
+			<md-toolbar class="md-primary">
+				<div class="md-toolbar-tools">
+					<h2 ng-if="!public.show_search" flex>Take</h2>
+					<md-input-container md-ink-ripple="false" md-no-float layout="row" flex ng-if="public.show_search" style="background-color: white" ng-cloak>
+						<input id="search-bar" ng-model="public.searchText" placeholder="Buscar" style="border-bottom: 0px;" ng-blur="toggleSearch()">
+						<md-icon md-font-set="material-icons" ng-click="clearSearch()">close</md-icon>
+					</md-input-container>
+					<md-button class="md-icon-button" aria-label="search" ng-if="searchEnabled() && !public.show_search" ng-click="toggleSearch()"><ng-md-icon icon="search"/></md-button>
+					<md-button class="md-icon-button" aria-label="more"><ng-md-icon icon="more_vert"/></md-button>
+				</div>
+			</md-toolbar>
+
+			<md-tabs class="md-primary" md-border-bottom md-selected="public.selectedTab">
+				<md-tab ng-click="goTo('buscar')" label="Buscar"></md-tab>
+				<md-tab ng-click="goTo('contacto')" label="Contacto"></md-tab>
+			</md-tabs>
+			<md-progress-linear ng-if="public.loading > 0"></md-progress-linear>
+		</div>
+		<md-content flex ng-view style="overflow: auto;" layout="row">
+    </md-content>
+	</body>
+
+</html>

@@ -1,0 +1,13 @@
+<md-list flex>
+
+	<md-list-item ng-repeat="rubro in rubros" ng-click="listar( rubro.id )">
+		<div class="md-list-item-text" flex>
+			<div layout="row" layout-align="start center">
+				<md-icon md-font-set="material-icons">{{rubro.icon}}</md-icon>
+				<span flex style="margin-left: 10px;">{{rubro.name}}</span>
+				<md-button class="md-icon-button"><md-icon md-font-set="material-icons">keyboard_arrow_right</md-icon></md-button>
+			</div>
+		</div>
+	</md-list-item>
+	
+</md-list>

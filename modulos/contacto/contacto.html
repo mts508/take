@@ -1,0 +1,9 @@
+<md-list>
+	<md-list-item class="md-3-line" ng-repeat="contacto in contactos" layout="row" ng-click="verMensajes( contacto.id )">
+		<img ng-src="{{contacto.photo}}" class="md-avatar">
+		<div class="md-list-item-text" layout="column" flex>
+			<h3>{{contacto.name}}</h3>
+			<h4>{{contacto.date}}</h4>
+		</div>
+	</md-list-item>
+</md-list>

@@ -1,0 +1,13 @@
+<md-list flex>
+	<md-list-item ng-repeat="aviso in avisos" class="md-3-line" ng-click="verAviso( aviso.id )">	
+		<div class="md-list-item-text" layout="row" flex>
+			<img ng-src="{{aviso.photo}}" width="56" height="56">
+			<div layout="column" style="padding-left: 10px;" flex>
+				<h3 style="text-overflow: unset; overflow-x: auto;">{{aviso.titulo}}</h3>
+				<p>{{aviso.usuario}}</p>
+			</h3>
+		</div>
+	</md-list-item>
+</md-list>
+
+<search-bar></search-bar>

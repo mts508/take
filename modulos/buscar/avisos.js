@@ -57,7 +57,19 @@ app.controller('Avisos', ['$scope', '$mdDialog', function($scope, $mdDialog) {
 
 
 		$scope.verAviso = function( id ) {
-			
+			$mdDialog.show({
+	      templateUrl: 'modulos/buscar/dialog_mostrar_aviso.html',
+	      controller: $scope.ctrlAvisos,
+	      parent: angular.element(document.body),
+	      clickOutsideToClose:false,
+	      fullscreen: true
+	    })
+		}
+
+		$scope.ctrlAvisos = function( scope, $mdDialog ) {
+	    scope.cancel = function() {
+	      $mdDialog.cancel();
+	    }
 		}
 
 		

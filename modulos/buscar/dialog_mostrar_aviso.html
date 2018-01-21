@@ -1,0 +1,54 @@
+<md-dialog>
+	<md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Delivery de Comida</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="cancel()" aria-label="Close dialog">
+        <md-icon md-font-set="material-icons">close</md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+	<md-dialog-content>
+		<md-card>
+			<md-card-content>
+				<div style="min-width:100%; height: 140px; background-color: gainsboro; margin-bottom: 20px;">
+					imagen
+				</div>
+				<span md-colors="::{color: 'take-primary-700'}" style="display: block;">Descripción</span>
+				<p>Hacemos envio de comida a domicilio</p>
+				<span>Nuestro menu:</span>
+				<ul>
+					<li style="white-space: pre;">$110 Docena de empanadas</li>
+					<li style="white-space: pre;"> $35 Hamburgesa simple </li>
+					<li style="white-space: pre;">$200 Pizza grande de muzzarella</li>
+				</ul>
+
+				<span md-colors="::{color: 'take-primary-700'}" style="display: block;">Horarios</span>
+				<p>Atendemos de lunes a viernes de 9hs a 18hs</p>
+				<span md-colors="::{color: 'take-primary-700'}" style="display: block;">Información adicional</span>
+				<p>Trabajamos en toda zona norte</p>
+			</md-card-content>
+		</md-card>
+		<md-card>
+			<md-card-content>
+				<span md-colors="::{color: 'take-primary-700'}" style="display: block;">Calificaciones de usuarios</span>
+				<span style="color: gold; font-size: 20pt; text-shadow: 0px 0px 5px black;">★★★★☆</span>
+				<md-card ng-repeat="a in [1,2,3,4]">
+					<md-card-header>
+						<md-card-avatar>
+		          <img src="files/no-image.png"/>
+		         </md-card-avatar>
+						<md-card-header-text>
+							<span class="md-title">Usuario {{a}}</span>
+							<span class="md-subhead">1/1/2018</span>
+						</md-card-header-text>
+					</md-card-header>
+					<md-card-content>
+						<p>La comida es muy rica</p>
+					</md-card-content>
+				</md-card>
+			</md-card-content>
+		</md-card>
+		
+	</md-dialog-content>
+</md-dialog>
